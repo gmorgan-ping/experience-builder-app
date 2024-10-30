@@ -1,0 +1,39 @@
+{
+  "branding": {
+    "companyLogoUrl": "https://logo.clearbit.com/delta.com",
+    "companyName": "Delta (Administrators)",
+    "showLogo": true,
+    "theme": {
+      "buttonBackgroundColor": "#9b0130",
+      "buttonTextColor": "#ffffff",
+      "cardBorderRadius": "10",
+      "errorColor": "#e70d2e",
+      "fontfamily": "'Montserrat', 'sans-serif'",
+      "formBackgroundColor": "#c2c2c2",
+      "formControlBorderRadius": "4",
+      "headingColor": "#0d0d0d",
+      "linkButtonColor": "#001e49",
+      "primaryTextColor": "#0d0d0d"
+    }
+  },
+  "mfa": {
+    "enabled": true
+  },
+  "risk": {
+    "id": "8353c48d-20dd-4779-b222-c464fd8aa282",
+    "enabled": true
+  },
+  "selfservice": {
+    "enableAccountRecovery": false,
+    "enableRegistration": false
+  },
+  "social": {
+    "enabled": false,
+    "providers": {
+      "facebook": false,
+      "github": false,
+      "google": false,
+      "microsoft": false
+    }
+  }
+}

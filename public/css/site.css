@@ -1,0 +1,405 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  color: #101010;
+}
+
+/* navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1030;
+  border-bottom: 1px solid #d8d7da;
+}
+
+#configBtn,
+#refreshBtn,
+#openExperienceBtn{
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: none;
+  cursor: pointer;
+  color: #0d6efd;
+}
+
+#configBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Left Sidebar */
+#leftSidebar {
+  width: 400px;
+  max-width: 30%;
+  position: fixed;
+  top: 52px;
+  bottom: 0;
+  left: 0;
+  background-color: #fcfcfd;
+  transition: width 0.3s;
+  padding: 20px 30px 10px 30px;
+  border: 1px solid #d8d7da;
+  border-width: 0px 1px 0px 0px;
+}
+
+/* Right Sidebar */
+#rightSidebar {
+  width: 400px;
+  max-width: 30%;
+  position: fixed;
+  top: 52px;
+  bottom: 0;
+  right: 0;
+  background-color: #fcfcfd;
+  transition: width 0.3s;
+  padding: 20px 30px 10px 30px;
+  border: 1px solid #d8d7da;
+  border-width: 0px 0px 0px 1px;
+}
+
+/* Content inside the sidebars */
+.sidebar-content {
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Hide content when left sidebar is collapsed */
+.collapsed-left #leftSidebar .sidebar-content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Hide content when right sidebar is collapsed */
+.collapsed-right #rightSidebar .sidebar-content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Collapse left sidebar */
+.collapsed-left #leftSidebar {
+  width: 20px;
+}
+
+/* Collapse right sidebar */
+.collapsed-right #rightSidebar {
+  width: 20px;
+}
+
+/* DaVinci Widget */
+#mainContent {
+  margin-top: 56px;
+  width: 100%;
+}
+
+#davinci-widget {
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+}
+
+#davinci-widget.hidden {
+  opacity: 0;
+}
+
+.collapsed-left #mainContent {
+  margin-left: 80px;
+}
+
+.collapsed-right #mainContent {
+  margin-right: 80px;
+}
+
+/* Sidebar toggle buttons */
+.sidebar-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f8f9fa;
+  color: #007bff;
+  padding: 5px;
+  width: 30px;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8d7da;
+}
+
+.sidebar-toggle:hover {
+  background-color: #dfe0e1;
+}
+
+/* Left toggle button */
+#leftToggleBtn {
+  right: -15px;
+}
+
+/* Right toggle button */
+#rightToggleBtn {
+  left: -15px;
+}
+
+.sidebar-toggle i {
+  font-size: 1.2rem;
+}
+
+.navbar-brand img {
+  margin-left: 10px;
+  height: 26px;
+}
+
+.navbar-brand span {
+  font-weight: 500;
+  margin-left: 4px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+/* Container for social login providers */
+
+.social-login-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  padding: 10px 17px;
+  width: 100%;
+}
+
+/* Social login box styling */
+.social-login-box {
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  flex: 1 1 auto;
+  max-width: 110px;
+  box-sizing: border-box;
+  margin-left: 10px;
+  padding: 10px 5px 5px 5px;
+}
+
+/* Social login logo */
+.social-login-box .social-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Stepper and color control */
+.form-control-color,
+.form-control-stepper {
+  width: 70px;
+}
+
+/* Experience Configuration Modal */
+.modal-lg {
+  max-width: 1000px;
+}
+
+.modal-dialog {
+  height: 800px;
+}
+
+.modal-content {
+  height: 100%;
+}
+
+.modal-body {
+  height: calc(100% - 120px);
+  overflow-y: auto;
+}
+
+.CodeMirror {
+  height: 100% !important;
+}
+
+#jsonConfig {
+  height: 100%;
+}
+
+.copyBtn {
+  top: 20px;
+  right: 40px;
+  z-index: 10;
+}
+
+.clearBtn {
+  top: 20px;
+  right: 84px;
+  z-index: 10;
+}
+
+/* Toasts */
+/* Success Toast */
+#copyToast,
+#successApplyConfigToast {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 5px solid #28a745;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Error Toast */
+#errorToast,
+#errorApplyConfigToast {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Toast Body */
+.toast-body {
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+/* Success Icon */
+.toast .fa-check-circle {
+  color: #28a745; /* Success green icon */
+}
+
+/* Error Icon */
+.toast .fa-times-circle {
+  color: #dc3545; /* Error red icon */
+}
+
+/* Button Close Icon */
+.btn-close {
+  filter: invert(20%);
+}
+
+#successModal .modal-dialog {
+  height: 350px;
+  margin-top: 100px; 
+}
+#successModal .modal-content {
+  height: 100%;
+}
+
+
+#experienceModal .modal-dialog {
+  height: 250px;
+  margin-top: 100px; 
+}
+#experienceModal .modal-content {
+  height: 100%;
+}
+
+:root {
+  --animation-dimension: 120px;
+  --animation-start-color: #71e171;
+  --animation-midway-color: #67d067;
+  --animation-finish-color: #59b259;
+}
+
+.checkmark {
+  width: var(--animation-dimension);
+  height: var(--animation-dimension);
+  border-radius: 50%;
+  display: block;
+  stroke-width: 5;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmarkCircle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+  stroke: var(--animation-finish-color);
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,
+    colorChange 1.2s ease-in-out forwards;
+}
+
+.checkmarkCheck {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,
+    colorChange 0.6s ease-in-out 0.8s forwards;
+}
+
+@keyframes colorChange {
+  0% {
+    stroke: var(--animation-start-color);
+  }
+  50% {
+    stroke: var(--animation-midway-color);
+  } 
+  100% {
+    stroke: var(--animation-finish-color);
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+  70% {
+    transform: scale3d(0.98, 0.98, 1);
+  }
+  85% {
+    transform: scale3d(1.02, 1.02, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);
+  }
+}
+
+
+/* Accordion */
+.accordion-button {
+  background-color: #f0f0f0 !important; 
+  font-weight: bold;          
+  border-top: 1px solid #dee2e6;  
+  font-size: 0.9rem;
+  padding: 8px 15px;
+}
+
+.accordion-item {
+  margin-bottom: 15px;   
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e0e0e0 !important;  
+}
+
+.accordion-button:hover, 
+.accordion-button:focus {
+  background-color: #e0e0e0 !important;  
+}
+
+.accordion-body {
+  padding-bottom: 0px !important;
+}
+
+

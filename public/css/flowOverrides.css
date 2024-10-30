@@ -1,0 +1,22 @@
+/* OVERRIDES */
+div.bg-light.d-flex.flex-column.justify-content-center.align-items-center.position-absolute.top-0.start-0.bottom-0.end-0 {
+  background-image: unset !important;
+  background-size: unset !important;
+  background-repeat: unset !important;
+  --bs-bg-opacity: 0 !important;
+  background-color: unset !important;
+  right: unset !important;
+  left: unset !important;
+  top: unset !important;
+  bottom: unset !important;
+  /* Issue with centering flow in widget, temp fix */
+  margin-left: -100px;
+}
+
+.companyLogo {
+  /* Logo image URL set using Branding Node  */
+  height: 65px !important;
+}
+.end-user-nano .mainDiv {
+  width: 460px !important;
+}

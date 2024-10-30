@@ -1,0 +1,39 @@
+{
+  "branding": {
+    "companyLogoUrl": "https://logo.clearbit.com/delta.com",
+    "companyName": "Delta",
+    "showLogo": true,
+    "theme": {
+      "buttonBackgroundColor": "#003972",
+      "buttonTextColor": "#ffffff",
+      "cardBorderRadius": "10",
+      "errorColor": "#da1f07",
+      "fontfamily": "'Montserrat', 'sans-serif'",
+      "formBackgroundColor": "#ffffff",
+      "formControlBorderRadius": "4",
+      "headingColor": "#1b1c1d",
+      "linkButtonColor": "#9b0130",
+      "primaryTextColor": "#1b1c1d"
+    }
+  },
+  "mfa": {
+    "enabled": true
+  },
+  "risk": {
+    "id": "8353c48d-20dd-4779-b222-c464fd8aa282",
+    "enabled": true
+  },
+  "selfservice": {
+    "enableAccountRecovery": true,
+    "enableRegistration": true
+  },
+  "social": {
+    "enabled": true,
+    "providers": {
+      "facebook": true,
+      "github": false,
+      "google": true,
+      "microsoft": false
+    }
+  }
+}

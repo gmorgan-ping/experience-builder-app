@@ -1,0 +1,39 @@
+{
+  "branding": {
+    "companyLogoUrl": "https://logo.clearbit.com/aircanada.com",
+    "companyName": "Air Canada (Delta Portal)",
+    "showLogo": true,
+    "theme": {
+      "buttonBackgroundColor": "#3d454d",
+      "buttonTextColor": "#ffffff",
+      "cardBorderRadius": "8",
+      "errorColor": "#a31300",
+      "fontfamily": "'Verdana', 'sans-serif'",
+      "formBackgroundColor": "#ffffff",
+      "formControlBorderRadius": "4",
+      "headingColor": "#3d454d",
+      "linkButtonColor": "#3d454d",
+      "primaryTextColor": "#3d454d"
+    }
+  },
+  "mfa": {
+    "enabled": true
+  },
+  "risk": {
+    "id": "8353c48d-20dd-4779-b222-c464fd8aa282",
+    "enabled": true
+  },
+  "selfservice": {
+    "enableAccountRecovery": true,
+    "enableRegistration": true
+  },
+  "social": {
+    "enabled": false,
+    "providers": {
+      "facebook": false,
+      "github": false,
+      "google": false,
+      "microsoft": false
+    }
+  }
+}
