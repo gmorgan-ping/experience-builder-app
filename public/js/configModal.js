@@ -28,11 +28,9 @@ function initializeConfigModal() {
   document.getElementById('configBtn').addEventListener('click', showExperienceConfigModal);
   document.getElementById('updateConfigBtn').addEventListener('click', applyCustomConfig);
   document.getElementById("copyToClipboardBtn").addEventListener("click", copyClipboardHandler);
-  
- 
-  document.getElementById('clearEditorBtn').addEventListener('click', () => { editor.setValue(''); editor.focus()});
 
-  
+  document.getElementById('clearEditorBtn').addEventListener('click', () => { editor.setValue(''); editor.focus() });
+
 }
 
 const showExperienceConfigModal = () => {
@@ -86,7 +84,6 @@ const copyClipboardHandler = () => {
     toast.show();
   }
 };
-
 
 /**
  * Recursively flattens a nested object into dot-notation key-value pairs.
@@ -157,7 +154,7 @@ const findMatchingOption = (flattenedKey, optionsList) => {
       // Recursively search inside the items of the heading
       matchingOption = findMatchingOption(flattenedKey, option.items);
       if (matchingOption) break;
-    } 
+    }
     // Check for a direct match with the 'mapping' attribute in non-heading options
     else if (option.mapping === flattenedKey) {
       matchingOption = option;
@@ -182,8 +179,6 @@ const findMatchingOption = (flattenedKey, optionsList) => {
 
   return matchingOption || null; // Return null if no match is found
 };
-
-
 
 /**
  * Iterates over the flattened config and finds matching items in the options lists.
@@ -259,16 +254,6 @@ const processFlattenedConfig = (flattenedConfig, experienceOptions, brandingOpti
   });
 };
 
-
-/**
- * Hides the configuration modal.
- * Retrieves the modal instance for the element with the ID 'configModal' 
- * and uses Bootstrap's modal instance method to hide the modal.
- */
-const hideModal = () => {
-  modal.hide();
-}
-
 /**
  * Applies the custom configuration by parsing the JSON from the CodeMirror editor,
  * processing the configuration, and hiding the modal.
@@ -292,7 +277,7 @@ const applyCustomConfig_old = () => {
     var successToastElement = document.getElementById('successApplyConfigToast');
     var successToast = new bootstrap.Toast(successToastElement);
     successToast.show();
-    
+
   } catch (error) {
     // Show error toast
     var errorToastElement = document.getElementById('errorApplyConfigToast');
@@ -306,26 +291,26 @@ const applyCustomConfig = () => {
   try {
     const parsedConfig = JSON.parse(jsonConfig);
     const flattenedConfig = flattenObject(parsedConfig);
-    
+
     // Optionally, remove branding.style if not needed for form update
     delete flattenedConfig['branding.style'];
 
     // Process the flattened configuration and map values to form elements
     processFlattenedConfig(flattenedConfig, experienceOptions, brandingOptions);
-    
+
     // Call handleFormChange or any other logic to reflect changes in form state
     handleFormChange();
-    
+
     hideModal();
-    
+
     // Show success toast
     var successToastElement = document.getElementById('successApplyConfigToast');
     var successToast = new bootstrap.Toast(successToastElement);
     successToast.show();
-    
+
   } catch (error) {
     console.error('Invalid JSON format:', error);
-    
+
     // Show error toast if JSON parsing fails
     var errorToastElement = document.getElementById('errorApplyConfigToast');
     var errorToast = new bootstrap.Toast(errorToastElement);
